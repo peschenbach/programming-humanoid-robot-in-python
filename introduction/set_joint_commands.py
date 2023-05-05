@@ -16,12 +16,41 @@ sys.path.append(os.path.join(os.path.abspath(os.path.dirname(__file__)), '..', '
 
 from spark_agent import SparkAgent
 
+JOINT_CMD_NAMES = {'HeadYaw': "he1",
+                   'HeadPitch': "he2",
+                   'LShoulderPitch': "lae1",
+                   'LShoulderRoll': "lae2",
+                   'LElbowYaw': "lae3",
+                   'LElbowRoll': "lae4",
+                   'LHipYawPitch': "lle1",
+                   'LHipRoll': "lle2",
+                   'LHipPitch': "lle3",
+                   'LKneePitch': "lle4",
+                   'LAnklePitch': "lle5",
+                   'LAnkleRoll': "lle6",
+                   'RShoulderPitch': "rae1",
+                   'RShoulderRoll': "rae2",
+                   'RElbowYaw': "rae3",
+                   'RElbowRoll': "rae4",
+                   'RHipYawPitch': "rle1",
+                   'RHipRoll': "rle2",
+                   'RHipPitch': "rle3",
+                   'RKneePitch': "rle4",
+                   'RAnklePitch': "rle5",
+                   'RAnkleRoll': "rle6"}
 
 class MyAgent(SparkAgent):
     def think(self, perception):
         action = super(MyAgent, self).think(perception)
-        # YOUR CODE HERE
 
+        # YOUR CODE HERE
+        action.stiffness = {'LShoulderPitch': 0}
+        action.speed = {'HeadYaw': 0.1}
+
+
+
+        
+        # print(result)
         return action
 
 if '__main__' == __name__:
