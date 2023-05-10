@@ -16,7 +16,10 @@ sys.path.append(os.path.join(os.path.abspath(os.path.dirname(__file__)), '..', '
 
 from spark_agent import SparkAgent
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d54c7937393d82e6afe289bfa3ae997d83c210f3
 class MyAgent(SparkAgent):
     def think(self, perception):
         action = super(MyAgent, self).think(perception)
