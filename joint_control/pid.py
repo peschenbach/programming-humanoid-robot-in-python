@@ -53,6 +53,8 @@ class PIDController(object):
         @return control signal
         '''
         # YOUR CODE HERE
+        # u_size = self.u.size
+        # self.u = np.ones(u_size)
 
         return self.u
 
